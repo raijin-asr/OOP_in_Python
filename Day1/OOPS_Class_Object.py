@@ -77,37 +77,3 @@ print(p2.name) # Output: Shyam
 # *The self parameter is a reference to the current
 #  instance of the class, and is used to access variables
 #  that belongs to the class.
-
-# Methods
-#  Methods are functions that belong to objects.
-
- #creating class
-class Employee:
-    def __init__(self, fullname):
-        self.name =  fullname #object attribute > class attribute
-    
-    def hello(self): # Method, self is mandatory as it is a reference to the current instance of the class
-        print("hello", self.name)
-
- #creating object
-e1 =  Employee("Ram" )
-e1.hello() # Output: hello Ram
-
-#static method: 
-# A static method is a method that doesn't take a reference to the instance as its first argument.
-# Methods that don’t use the self parameter (work at class level)
- 
-class EmployeeX:
-    def __init__(self, fullname):
-        self.name =  fullname #object attribute > class attribute
-    
-    @staticmethod #decorator to make it static method
-    def hello():
-        print("hello")
-
- #creating object
-e1 =  EmployeeX("Ram" )
-e1.hello() # Output: hello
-
-#  *Decorators allow us to wrap another function in order to extend the behaviour of the wrapped function, without permanently modifying it
-# decorators are used to modify the behavior of function or class method. and returns a new function or class method.
