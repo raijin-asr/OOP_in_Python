@@ -35,15 +35,17 @@ e1.hello() # Output: hello
 # @classmethod:
 # A class method is a method that is bound to the class and not the object of the class.
 # They have the access to the state of the class as it takes
+ # it is used to change variable of class, not object or methods of class
 
 class EmployeeY:
     company = "Google"
-    def __init__(self, fullname):
+    def __init__(self, fullname): #self is object of class
         self.name =  fullname #object attribute > class attribute
     
-    @classmethod #decorator to make it class method
-    def hello(cls):
-        print("hello", cls.company)
+    @classmethod #decorator to make it class method to access class data
+    def hello(cls): #here cls is first argument instead of self
+        print("hello", cls.company) #directly accessing variable of class
+        #or self.__class__.company= "Amazon" //changes google to Amazon of class directly
 
  #creating object
 e2 =  EmployeeY("Ram" )
@@ -55,3 +57,8 @@ e2.hello() # Output: hello Google
 # *Class methods can’t access or modify object state.
 # *Class methods are bound to the class, not the object of the class.
 # *Class methods are defined using a decorator @classmethod.
+
+#so there can be 3 types of methods in python:------------
+#1. Instance method: takes self as first parameter
+#2. Static method: takes no parameter
+#3. Class method: takes cls as first parameter
