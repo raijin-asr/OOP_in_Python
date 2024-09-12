@@ -4,3 +4,4 @@
     Day3: Abstraction
     Day4: Encapsulation
     Day5: Polymorphism and operator overloading
+    Day6: Property Method
